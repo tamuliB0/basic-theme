@@ -7,18 +7,16 @@
 
 get_header();
 ?>
-
-<h1>Welcome</h1>
-<p>This website shares blog posts, ideas, and portfolio work built with WordPress theme development.</p>
-
 <?php
 if ( have_posts() ) :
 	while ( have_posts() ) :
 		the_post();
 		?>
 
-	<h2><?php echo esc_html( the_title() ); ?></h2>
-		<?php the_content(); ?>
+		<article <?php post_class(); ?>>
+			<h1><?php echo esc_html( get_the_title() ); ?></h1>
+			<?php the_content(); ?>
+		</article>
 	
 	<?php endwhile;
 else :
