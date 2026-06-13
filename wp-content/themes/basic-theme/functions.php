@@ -26,3 +26,16 @@ function basic_theme_setup() {
 	add_theme_support( 'title-tag' );
 }
 add_action( 'after_setup_theme', 'basic_theme_setup' );
+
+/**
+ * Register theme navigation menus.
+ */
+function basic_theme_register_menus() {
+	register_nav_menus(
+		array(
+			'header-menu' => __( 'Primary Menu', 'basic-theme' ),
+			'footer-menu' => __( 'Secondary Menu', 'basic-theme' ),
+		)
+	);
+}
+add_action( 'init', 'basic_theme_register_menus' );
