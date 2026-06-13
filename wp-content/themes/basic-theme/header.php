@@ -15,3 +15,13 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+  <nav>
+		<?php
+		wp_nav_menu(
+			array(
+				'theme_location' => 'header-menu',
+				'fallback_cb'    => false,
+			)
+		);
+		?>
+	</nav>
