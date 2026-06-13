@@ -10,21 +10,7 @@ get_header(); ?>
 <?php if ( have_posts() ) : ?>
 	<div class="grid-container">
 		<?php while ( have_posts() ) : the_post(); ?>
-
-		<article <?php post_class(); ?>>
-			
-			<?php if ( has_post_thumbnail() ) : ?>
-				<?php the_post_thumbnail( 'thumbnail' ); ?>
-			<?php endif; ?>
-			<h2>
-				<a href="<?php echo esc_url( get_permalink() ); ?>">
-					<?php echo esc_html( get_the_title() ); ?>
-				</a>
-			</h2>
-			<p><?php the_time( 'F j, Y' ); ?></p>
-
-			<?php the_excerpt(); ?>
-		</article>
+		<?php get_template_part( 'template-parts/content' ); ?>
 		<?php endwhile; ?>
 	</div>
 	<?php
