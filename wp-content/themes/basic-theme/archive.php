@@ -7,6 +7,7 @@
 
 get_header();?>
 <h1><?php the_archive_title(); ?></h1>
+<?php the_archive_description() ?>
 <?php
 if ( have_posts() ) :
 	while ( have_posts() ) :
