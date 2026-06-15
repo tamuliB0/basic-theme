@@ -62,7 +62,6 @@ function basic_theme_register_portfolio_post_type() {
         'labels'        => $labels,
         'public'        => true,
         'has_archive'   => true,
-		// 'rewrite'       => array( 'slug' => 'work' ),
         'supports'      => array(
             'title',
             'editor',
