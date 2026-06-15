@@ -15,16 +15,16 @@ if ( have_posts() ) :
 	while ( have_posts() ) :
 		the_post();
 		?>
-		
-		<h2>
-			<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
-		</h2>
-		<?php echo esc_html( get_the_date() ); ?>
+		<article <?php post_class(); ?>>
+			<h2>
+				<a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
+			</h2>
+			<?php echo esc_html( get_the_date() ); ?>
+		</article>
 		<?php
 	endwhile;
-	else :
-		esc_html_e( 'No posts found', 'basic-theme' );
-	endif;
-
-	get_footer();
-	?>
+else :
+	esc_html_e( 'No posts found', 'basic-theme' );
+endif;
+get_footer();
+?>
