@@ -8,7 +8,7 @@
 
 <article <?php post_class(); ?>>
 	<?php if ( is_singular() ) : ?>
-		<h1><?php the_title(); ?></h1>
+		<h1><?php echo esc_html( get_the_title() ); ?></h1>
 		<p><?php echo esc_html( get_the_date( 'F j, Y' ) ); ?></p>
 		<?php if ( has_post_thumbnail() ) : ?>
 				<?php the_post_thumbnail( 'large' ); ?>
@@ -18,13 +18,13 @@
 			?>
 	<?php else : ?>
 		<h2>
-			<a href="<?php the_permalink(); ?>">
-				<?php the_title(); ?>
+			<a href="<?php echo esc_url( get_permalink() ); ?>">
+				<?php echo esc_html( get_the_title() ); ?>
 			</a>
 		</h2>
 		<p><?php echo esc_html( get_the_date( 'F j, Y' ) ); ?></p>
 		<?php if ( has_post_thumbnail() ) : ?>
-				<a href="<?php the_permalink(); ?>">
+				<a href="<?php echo esc_url( get_permalink() ); ?>">
 					<?php the_post_thumbnail( 'medium' ); ?>
 				</a>
 		<?php endif; ?>

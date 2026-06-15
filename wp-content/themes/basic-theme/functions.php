@@ -39,3 +39,35 @@ function basic_theme_register_menus() {
 	);
 }
 add_action( 'init', 'basic_theme_register_menus' );
+
+/**
+ * Register Portfolio custom post type.
+ */
+function basic_theme_register_portfolio_post_type() {
+	$labels = array(
+        'name'                  => __( 'Portfolio', 'basic-theme' ),
+        'singular_name'         => __( 'Portfolio Item', 'basic-theme' ),
+        'menu_name'             => __( 'Portfolio', 'basic-theme' ),
+        'name_admin_bar'        => __( 'Portfolio', 'basic-theme' ),
+        'add_new'               => __( 'Add New', 'basic-theme' ),
+        'add_new_item'          => __( 'Add New Portfolio', 'basic-theme' ),
+        'new_item'              => __( 'New Portfolio', 'basic-theme' ),
+        'edit_item'             => __( 'Edit Portfolio', 'basic-theme' ),
+        'view_item'             => __( 'View Portfolio', 'basic-theme' ),
+        'search_items'          => __( 'Search Portfolios', 'basic-theme' ),
+        'not_found'             => __( 'No portfolios found.', 'basic-theme' ),
+        'not_found_in_trash'    => __( 'No portfolios found in Trash.', 'basic-theme' ),
+    );
+    $args = array(
+        'labels'        => $labels,
+        'public'        => true,
+        'has_archive'   => true,
+        'supports'      => array(
+            'title',
+            'editor',
+            'thumbnail'
+        ),
+    );
+    register_post_type( 'portfolio', $args );
+}
+add_action( 'init', 'basic_theme_register_portfolio_post_type' );

@@ -18,5 +18,4 @@ if ( have_posts() ) :
 else :
     esc_html_e( 'Sorry, no posts matched your criteria.', 'basic-theme' );
 endif;
-
 get_footer();
