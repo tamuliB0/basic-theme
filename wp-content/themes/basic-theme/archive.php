@@ -7,7 +7,7 @@
 
 get_header();?>
 <h1><?php the_archive_title(); ?></h1>
-<?php the_archive_description() ?>
+<?php echo wp_kses_post( get_the_archive_description() ); ?>
 <?php
 if ( have_posts() ) :
 	while ( have_posts() ) :
@@ -17,7 +17,7 @@ if ( have_posts() ) :
 		<?php
 	endwhile;
 else :
-	esc_html_e( 'Sorry, no posts matched your criteria.', '' );
+	esc_html_e( 'Sorry, no posts matched your criteria.', 'basic-theme' );
 endif;
 
 get_footer();
