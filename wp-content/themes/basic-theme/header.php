@@ -15,7 +15,7 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  <nav>
+	<nav>
 		<?php
 		wp_nav_menu(
 			array(
