@@ -18,9 +18,8 @@ if ( have_posts() ) :
         ?>
         <?php
     endwhile;
-    else :
-        esc_html_e( 'No posts found', 'basic-theme' );
-    endif;
-
+else :
+    esc_html_e( 'No posts found', 'basic-theme' );
+endif;
 get_footer();
 ?>
